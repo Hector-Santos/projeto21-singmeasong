@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/react-in-jsx-scope */
 import { Suspense, lazy, Component } from "react";
 import {
   BrowserRouter as Router,
@@ -7,13 +9,14 @@ import {
 
 const Loading = () => (
   <div>Loading...</div>
-  );
+);
   
+// eslint-disable-next-line react/display-name
 const LazyWrapper = (Component) => (props) => (
   <Suspense fallback={<Loading />}>
     <Component {...props} />
   </Suspense>
-)
+);
 
 const Timeline = LazyWrapper(lazy(() => import("./pages/Timeline")));
 const Home = LazyWrapper(lazy(() => import("./pages/Timeline/Home")));
@@ -32,5 +35,5 @@ export default function App() {
         </Route>
       </Routes>
     </Router>
-  )
+  );
 }

@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import useTopRecommendations from "../../../hooks/api/useTopRecommendations";
 
 import Recommendation from "../../../components/Recommendation";
@@ -28,5 +29,5 @@ export default function Home() {
         )
       }
     </>
-  )
+  );
 }

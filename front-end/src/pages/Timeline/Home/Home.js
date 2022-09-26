@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { useEffect } from "react";
 
 import useRecommendations from "../../../hooks/api/useRecommendations";
@@ -49,5 +50,5 @@ export default function Home() {
         )
       }
     </>
-  )
+  );
 }
