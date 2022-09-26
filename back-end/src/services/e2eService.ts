@@ -1,17 +1,21 @@
-import * as e2eRepository from "../repositories/e2eRepository";
+import * as e2eRepository from "../repositories/e2eRepository.js";
+import { faker } from "@faker-js/faker";
 import { recommendationRepository } from "../repositories/recommendationRepository.js";
-import {prepareRecommendation} from "../../tests/factories/recommendationFactory";
+
 export async function truncate() {
   await e2eRepository.truncate();
 }
 
-export async function populate() {
 
-  for(let i = 0; i<10; i++){
-    const createRecommendationData = await prepareRecommendation();
-
-    await recommendationRepository.create(createRecommendationData);
-   
-  }
+export async function create() {
+  const urlStart = "https://www.youtube.com/";
+  const youtubeLink = urlStart + faker.random.alphaNumeric(10);
+  const recommendation = {
+    name: faker.name.fullName(),
+    youtubeLink:youtubeLink
+  };
+  
+  recommendationRepository.create(recommendation);
+  
   
 }
