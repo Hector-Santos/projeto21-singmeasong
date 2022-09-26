@@ -1,4 +1,4 @@
-import { prisma } from "../../../src/database";
+import { prisma } from "../../src/database";
 
 export async function deleteAllData() {
   await prisma.$transaction([
@@ -8,4 +8,4 @@ export async function deleteAllData() {
 
 export async function disconnectPrisma(): Promise<void> {
   await prisma.$disconnect();
-};
+}

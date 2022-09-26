@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon src/server.ts",
     "prisma-test": "dotenv -e .env.test prisma migrate reset --skip-seed",
-    "test": "dotenv -e .env.test jest --coverage",
+    "test": "dotenv -e .env.test jest -- -i --coverage",
     "microtests": "ts-node microtests.ts"
   },
   "keywords": [],
